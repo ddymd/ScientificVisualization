@@ -60,13 +60,14 @@ class Ruler:
         for line in self.ax.yaxis.get_ticklines(True)[1::9]:
             line.set_markersize(1.5 * markersize)
 
-# width = page width - left margin - right margin
-width = (14.8 - 1.5 - 2.0) / 2.54
-height = width / 2
+if __name__ == '__main__':
+    # width = page width - left margin - right margin
+    width = (14.8 - 1.5 - 2.0) / 2.54
+    height = width / 2
 
-fig = plt.figure(figsize=(width, height), dpi=100)
-ax = plt.subplot()
-ruler = Ruler()
+    fig = plt.figure(figsize=(width, height), dpi=100)
+    ax = plt.subplot()
+    ruler = Ruler()
 
-plt.savefig("ruler.pdf")
-plt.show()
+    plt.savefig("ruler.pdf")
+    plt.show()
